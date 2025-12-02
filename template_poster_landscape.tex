@@ -1,4 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Imperial College London Poster (Landscape)
 % LaTeX Template
 % Version 1.0 (February 22, 2024)
@@ -28,275 +27,129 @@
 	%print, % Uncomment to convert colors to CMYK for printing purposes
 	%a1papersize, % Uncomment to use an A1 paper size instead of the default A0 paper size
 ]{ImperialPoster}
+\usepackage[
+  backend=biber,
+  style=numeric
+]{biblatex}
+\usepackage{amssymb, amsmath, amsthm}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{graphicx, psfrag, setspace, subfigure, gensymb}
+\usepackage{color}
+\usepackage[justification=centering]{caption}
+\usepackage{multicol} % This is so we can have multiple columns of text side-by-side
+\columnsep=100pt % This is the amount of white space between the columns in the poster
+\columnseprule=3pt % This is the thickness of the black line between the columns in the poster
+
+\newtheorem{thm}[equation]{Theorem}  
+\addbibresource{bibliography.bib}
 
 %----------------------------------------------------------------------------------------
 %	POSTER INFORMATION
 %----------------------------------------------------------------------------------------
 
-\postertitle{Title\\ Short and snappy, with the main message} % The poster title, can be split across multiple lines manually with \\
+\postertitle{Homological mirror symmetry for some orbifold del Pezzo surfaces and the special McKay correspondence} % The poster title, can be split across multiple lines manually with \\
 
 % Contributor/author names, can be split across multiple lines manually with \\
 % Add affiliations using the \affiliation{} command
-\posterauthors{Name of contributor\affiliation{1, 2},\\ Name of contributor\affiliation{1},\\ Name of contributor\affiliation{3}}
+\posterauthors{Bogdan Simeonov (Imperial College London,as part of the London School of Geometry and Number Theory)}
 
 % Command to output coauthor logos to the right of the Imperial logo in the header of the poster
 % If no coauthor logos are required, remove or comment out this command
-\coauthorlogos{
-	\coauthorlogo[4cm]{Grey_16-9.pdf} % Use the optional parameter to specify a height for the logo
-	\coauthorlogo[4cm]{Grey_16-9.pdf} % Use the optional parameter to specify a height for the logo
-	\coauthorlogo{Grey_16-9.pdf} % Not specifying the optional parameter will make the logo the same height as the Imperial logo
-}
 
+\coauthorlogos{
+	\coauthorlogo[4cm]{UKRI_logo.png} % Use the optional parameter to specify a height for the logo
+	\coauthorlogo[4cm]{lsgntlogo.png} % Use the optional parameter to specify a height for the logo
+	%\coauthorlogo{Grey_16-9.pdf} % Not specifying the optional parameter will make the logo the same height as the Imperial logo
+}
 %----------------------------------------------------------------------------------------
 
 \begin{document}
 
-%----------------------------------------------------------------------------------------
-%	EXAMPLE POSTER LAYOUT 1
-%----------------------------------------------------------------------------------------
-
 \titlesection % Output the title section, automatically populated using the information in the POSTER INFORMATION block above
 
 \medskip % Vertical whitespace
 
-\begin{multicols}{4} % Start the four-column layout
+\begin{multicols}{3} % Start the four-column layout
 	
-	%----------------------------------------------------------------------------------------
-	%	FIRST COLUMN
-	%----------------------------------------------------------------------------------------
+	\subsection{\Large Introduction and main result}
 	
-	\subsection{Subsection Title}
+	We study a class of orbifold del Pezzo surfaces with a single $\frac{1}{k}(1,1)$ point, thought of as the family of hypersurfaces $X_{k+1}\subset \mathbb{P}(1,1,1,k)$. Their derived category has a particularly nice semiorthogonal decomposition due to the special McKay correspondence (Ueda-Ishii, Rota-Gugiatti):
+	$$\mathcal{D}^b(\mathcal{X})=\langle e_2, \dots, e_{k-1}, \Phi D^b(Y)\rangle$$ where $Y$ is the resolution of the underlying singular coarse space of $\mathcal{X}$ and the $e_i$ are skyscraper sheaves supported at the orbifold point, with some extra representation-theoretic data.
+
+	\begin{thm}There is a mirror LG model $W:M^0\rightarrow \mathbb{C}$ whose generic fiber is a hyperelliptic curve of genus $\frac{k+1}{2}$ and an explicit mirror map associating to a complexified Kahler class $[B+i\omega]$ an element $\mathcal{X}$ in the family of del Pezzo surfaces such that $$\mathcal{D}^b(\mathcal{X})\simeq \mathrm{Lag}_{vc}(M^0,W; [B+i\omega])$$
+	Moreover, there is a complex submanifold $M^{in}\subset M^0$ which is a Stein subdomain when $M^0$ is exact which is a fibration of punctured elliptic curves for which $$D^b(Y)\simeq \mathrm{Lag}_{vc}(M^{in}, W|_{M^{in}}; [B+i\omega]|_{M^{in}})$$
+	As such, the fully faithful functor $\Phi:\mathcal{D}^b(Y)\rightarrow \mathcal{D}^b(\mathcal{X})$ can be thought of as a non-exact analogue of the forward stopped inclusion functors of Sylvan/Ganatra-Pardon-Shende.
+	\end{thm}
+
+
 	
-	Adi cum fugia qui dolo ommodit quia venisi saperat iscim qsequae nobissitat.
+	\subsection{\Large Previous results}
 	
-	Sed que perspic ipsanihit quunt aligenist re reperehendia \textcolor{ICLBlue}{apicias re pellectur sustentur?}
+	Our paper builds and generalizes techniques of Auroux-Katzarkov-Orlov (who proved HMS for smooth del Pezzo surfaces, as well as weighted projective planes), as well as Hacking-Keating, who proved HMS for smooth log CY surfaces at the large volume limit by constructing an abstract Lefschetz fibration. In particular, the manifold $M^{in}$ serves as an explicit realization of Hacking-Keating's abstract Lefschetz fibration, and moreover we are able to consider mirror symmetry over a large open subset of the space of complex structures rather than just the large volume limit point.
 	
-	Ehendios \textcolor{ICLBlue}{dolores} ni dolut acero del mint apid esto bernatendem eum \textcolor{ICLBlue}{atqui delisti opta} aliquam il id quam fuguist, eum rerferesto conserro berionectio. Alitatu saperat iscim qsequae.
-	
-	\begin{quote}
-		"Pull Quote/Subtitle. Oluptat ut in gother comnihic totatem apietur, ium audi imus vent ipsum volup ta veniscil dolut acero del mint conserro"
-	\end{quote}
-	
-	\subsection{Subsection Title}
-	
-	Adi cum fugia qui dolo ommodit quia venisi saperat iscim qsequae nobissitat.
-	
-	Sed que perspic ipsanihit quunt aligenist re reperehendia apicias re pellectur sus, tentur? 
-	
-	\begin{table}[H] % [H] forces the table to be output where it is defined in the code (it suppresses floating)
-		\caption{Experimental results.}
-		\begin{tabular}{L{0.24\linewidth} C{0.24\linewidth} R{0.24\linewidth}}
-			\toprule
-			Treatment & Quantity & Response\\
-			\midrule
-			AAA & 10mL & 0.944\\
-			AAA & 150mL & 0.527\\
-			BBB & 20mL & 0.263\\
-			BBB & 2,000mL & 0.818\\
-			\bottomrule
-		\end{tabular}
-	\end{table}
+
 		
-	\columnbreak % Switch to the next column
+	%\columnbreak % Switch to the next column
 	
 	%----------------------------------------------------------------------------------------
 	%	SECOND COLUMN
 	%----------------------------------------------------------------------------------------
 	
-	\section{Section Title}
+	\subsection{\Large Strategy of proof}
 	
-	Equae es nobissitat hitatum estis quodit larib ustotatet etur aut exere estint eium ium expeb usantis sae maio omnis consed quam reici voluptam ipistio. Arum, se velliquosam, oms evelendici derroruptius debitis quunto
+	The mirror manifold $M^0$ is a partial compactification of $(\mathbb{C}^\times)^2$ on which the potential function looks like $$W|_{(\mathbb{C}^\times)^2}=\frac{\prod_{i=1}^{k+1} (y+q_i)}{xy}+x+(\tau_1y+\dots+\tau_{\frac{k-1}{2}}y^{\frac{k-1}{2}})$$
+	\smalltext{Remark: The parameters $q_i$ are Novikov parameters associated to classes in $H_2(\mathcal{X})$ and the $\tau_i$ are parameters associated to twisted orbifold sectors. As such, they depend on the symplectic structure of $\mathcal{X}$ and determine the complex structure of $M^0$. Since we are for now concerned with $\mathcal{X}$ as B-model, we can more or less freely set the values of these parameters.}
+	We construct a deformation of the potential depending on an extra parameter $s$ such that for $s\approx 0$ the critical values of $W_s$ are distributed as in the following figure:
 	
-	\smalltext{Equae es nobissitat hitatum estis quodit larib ustotatet etur aut exere estint eium ium expeb usantis sae maio omnis consed quam reici voluptam ipistio. Arum, se velliquosam, oms evelendici derroruptius debitis quunto} % Use \smalltext or an enclosed \small for a block of text in a reduced font size
-	
-	\begin{figure}[H] % [H] forces the figure to be output where it is defined in the code (it suppresses floating)
-		\includegraphics[width=\linewidth]{Grey_4-3_Portrait.pdf} % Figure image
-		\caption{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porttitor arcu luctus, imperdiet urna iaculis, mattis eros. Pellentesque iaculis odio vel nisl ullamcorper, nec faucibus ipsum molestie.}
+	\begin{figure}[H] 
+		\centering
+		\includegraphics[scale=3]{criticalvaluesandpaths.pdf} \caption{ Critical values in the case $k=15, q_i=1, \tau_1=1, \tau_i>0, s\approx 0$. At the origin, there is a fiber containing $k$ holomorphic spheres.}
 	\end{figure}
+	A careful choice of vanishing paths (differing from the one depicted above by passing to the left dual of the paths going to the outer purple critical values) will give us a collection of Lagrangian vanishing cycles, whose topological type we compute on the general fiber. We get a semiorthogonal decomposition $$\langle \color{purple}\tilde{L}_{2},\dots, \tilde{L}_{k-1}, \color{blue}P_0, \tilde{P},P_1, \color{orange}B_1, \dots, B_{k+1}\rangle$$ which we claim is mirror to the full exceptional collection $$\langle e_2, \dots, e_{k-1}, \Phi \mathcal{O}, \Phi \mathcal{T}(-H),\Phi \mathcal{O}(H), \Phi\mathcal{O}_{B_1},\dots, \Phi\mathcal{O}_{B_{k+1}}\rangle$$
+	To prove this, we choose grading data so that everything is concentrated in degree $0$ and hence the $A_\infty$ structure reduces to a computation of the composition law in both categories.
+
+
+
+	\subsection{\Large Resolving orbifold points on the B-side as handle attachment surgery on the A-side}
 	
-	\columnbreak % Switch to the next column
-	
-	%----------------------------------------------------------------------------------------
-	%	THIRD COLUMN
-	%----------------------------------------------------------------------------------------
-	
-	\begin{figure}[H] % [H] forces the figure to be output where it is defined in the code (it suppresses floating)
-		\includegraphics[width=\linewidth]{Grey_16-9.pdf} % Figure image
-		\caption{Figure caption. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porttitor arcu luctus, imperdiet urna iaculis, mattis eros. Pellentesque iaculis odio vel nisl ullamcorper, nec faucibus ipsum molestie.}
+	To recover the mirror to $Y$ from the mirror to $\mathcal{X}$, one passes to a codimension $0$ complex submanifold $M^{in}\subset M^0$. This can be constructed as $M^{in}:=\{m \in M|\, |W(m)|^2\leq R,|y(m)|^2\leq R\}$ for a sufficiently large $R$. This is essentially restricting the LG model to a smaller disk, ignoring the outer critical values, but also making the generic fiber smaller by removing some handles, which can be visualized as:
+
+	\begin{figure}[H] 
+		\centering
+		\includegraphics[scale=2]{HyperellipticHandles.pdf} % Figure image
+		\caption{ A punctured genus $\frac{k+1}{2}$ hyperelliptic curve, thought of as a twice-punctured elliptic curve with $k-2$ handle attachments.}
 	\end{figure}
-	
-	\subsection{Subsection Title}
-	
-	Adi cum fugia qui dolo ommodit quia venisi saperat iscim qsequae nobissitat. Sed que perspic ipsanihit quunt aligenist re reperehendia, apicias re pellectur susentur? Ehendios dolores ni dolut acero del mint apid esto bernatendem eum atqui delisti opta aliquam il id quam fuguist, eum rerferesto conserro berionectio. Alitatu saperat iscim  trffeq qsequae.
 
-	Ugia susae et remolectur, tem si occaborectas reptati con net porem. Imusci cus voluptat.
 	
-	\includegraphics[width=0.49\linewidth]{Grey_16-9.pdf}\hfill\includegraphics[width=0.49\linewidth]{Grey_16-9.pdf} % Side by side images
-	
-	\begin{itemize}
-		\item Lorem ipsum
-		\item Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-		\item Praesent porttitor.
-	\end{itemize}
-	
-	\columnbreak % Switch to the next column
-	
-	%----------------------------------------------------------------------------------------
-	%	FOURTH COLUMN
-	%----------------------------------------------------------------------------------------
-	
-	\section{Section Title}
-	
-	\begingroup
-		\small % Reduce font size
-		Obisim qui quiae porum ea volorenis eic tem andae nus, verem expligento tecum eos quo magnihit inis sunt di dolupta tiuntem qui ipid moluptatquam idio. Itinturia vellam in none velit quat landi ium faci dolum volut as ea cus.
-
-		Am conet, ut occaerum ant eatibusdae sit, nus etur? Mincia cone verum qui dis nobitatur sequodi oriaepuda sim rempersperia nulluptatis culpario eicte illupta tenemperit isquamus natem et officilique prehent unt aut magnis volut porupta turehen ditatenis eumquamus dolorisi dipis enis vid ulpa aciur.\par
-	\endgroup
-	
-	\largepercent{95\%} % Large bold percentage figure
-	
-	Equae es nobissitat hitatum estis quodit larib ustotatet etur aut exere estint eium ium exeb usantis sae maio omnis consed quam reici*
-	
-	\smalltext{*Equae es nobissitat hitatum estis quodit laborib ustotatet e auexere estint eium ium experib usantis sae maio omnis co.} % Use \smalltext or an enclosed \small for a block of text in a reduced font size
-		
-	\boldsection{Arum alis dolum aut pe dolorestem cone verestis es si beaquib usanime eum} % Output some bold text to stand out from the body text
-	
-	\subsection{Affiliations}
+	%\subsection{Affiliations}
 	
 	% Affiliation institutions, the first parameter is the affiliation number (matching the author list) and the second is the institution
-	\affiliationentry{1}{Department Name, Imperial College London}\\
-	\affiliationentry{2}{University Name}\\
-	\affiliationentry{3}{Institute Name}
-	
-	\subsection{Funders}
-	
-	\includegraphics[width=0.55\linewidth]{UKRI_logo.png}\hfill\includegraphics[width=0.35\linewidth]{Grey_16-9.pdf} % Side by side funder logos
-	
-%----------------------------------------------------------------------------------------
-
-\end{multicols}
-
-%----------------------------------------------------------------------------------------
-%	EXAMPLE POSTER LAYOUT 2
-%----------------------------------------------------------------------------------------
-
-\newpage
-
-\titlesection % Output the title section, automatically populated using the information in the POSTER INFORMATION block above
-
-\medskip % Vertical whitespace
-
-\begin{multicols}{4} % Start the three-column layout
-	
-	%----------------------------------------------------------------------------------------
-	%	FIRST COLUMN
-	%----------------------------------------------------------------------------------------
-	
-	\subsection{Subsection Title}
-	
-	Adi cum fugia qui dolo ommodit quia venisi saperat iscim qsequae nobissitat.
-	
-	Sed que perspic ipsanihit quunt aligenist re reperehendia \textcolor{ICLBlue}{apicias re pellectur sustentur?}
-	
-	Ehendios \textcolor{ICLBlue}{dolores} ni dolut acero del mint apid esto bernatendem eum \textcolor{ICLBlue}{atqui delisti opta} aliquam il id quam fuguist, eum rerferesto conserro berionectio. Alitatu saperat iscim qsequae.
-	
-	\begin{quote}
-	"Pull Quote/Subtitle. Oluptat ut in gother comnihic totatem apietur, ium audi imus vent ipsum volup ta veniscil dolut acero del mint conserro"
-	\end{quote}
-	
-	\subsection{Subsection Title}
-	
-	Adi cum fugia qui dolo ommodit quia venisi saperat iscim qsequae nobissitat.
-	
-	Sed que perspic ipsanihit quunt aligenist re reperehendia apicias re pellectur sus, tentur? 
-	
-	\begin{table}[H] % [H] forces the table to be output where it is defined in the code (it suppresses floating)
-		\caption{Experimental results.}
-		\begin{tabular}{L{0.24\linewidth} C{0.24\linewidth} R{0.24\linewidth}}
-			\toprule
-			Treatment & Quantity & Response\\
-			\midrule
-			AAA & 10mL & 0.944\\
-			AAA & 150mL & 0.527\\
-			BBB & 20mL & 0.263\\
-			BBB & 2,000mL & 0.818\\
-			\bottomrule
-		\end{tabular}
-	\end{table}
-	
-	\columnbreak % Switch to the next column
-	
-	%----------------------------------------------------------------------------------------
-	%	SECOND COLUMN
-	%----------------------------------------------------------------------------------------
-	
-	\section{Section Title}
-	
-	Equae es nobissitat hitatum estis quodit larib ustotatet etur aut exere estint eium ium expeb usantis sae maio omnis consed quam reici voluptam ipistio. Arum, se velliquosam, oms evelendici derroruptius debitis quunto. 
-	
-	\smalltext{Equae es nobissitat hitatum estis quodit larib ustotatet etur aut exere estint eium ium expeb usantis sae maio omnis consed quam reici voluptam ipistio.} % Use \smalltext or an enclosed \small for a block of text in a reduced font size
-	
-	\begin{figure}[H] % [H] forces the figure to be output where it is defined in the code (it suppresses floating)
-		\includegraphics[width=0.495\textwidth]{Grey_4-3.pdf} % Figure image
-		\parbox[b]{0.495\textwidth}{\caption{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porttitor arcu luctus, imperdiet urna iaculis, mattis eros.}} % Caption needs to be in a parbox of the same width as the figure in order to span the same width across 2 columns
-	\end{figure}
-	
-	\columnbreak % Switch to the next column
-	
-	%----------------------------------------------------------------------------------------
-	%	THIRD COLUMN
-	%----------------------------------------------------------------------------------------
-	
-	\begin{figure}[H] % [H] forces the figure to be output where it is defined in the code (it suppresses floating)
-		\includegraphics[width=\linewidth]{Grey_16-9.pdf} % Figure image
-		\caption{Figure caption. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porttitor arcu luctus.}
-	\end{figure}
-		
-	\columnbreak % Switch to the next column
-	
-	%----------------------------------------------------------------------------------------
-	%	FOURTH COLUMN
-	%----------------------------------------------------------------------------------------
-	
-	\section{Section Title}
-	
-	\begingroup
-		\small % Reduce font size
-		Obisim qui quiae porum ea volorenis eic tem andae nus, verem expligento tecum eos quo magnihit inis sunt di dolupta tiuntem qui ipid moluptatquam idio. Itinturia vellam in none velit quat landi ium faci dolum volut as ea cus.
-
-		Am conet, ut occaerum ant eatibusdae sit, nus etur? Mincia cone verum qui dis nobitatur sequodi oriaepuda sim rempersperia nulluptatis culpario eicte illupta tenemperit isquamus natem.\par
-	\endgroup
-	
-	\largepercent{95\%} % Large bold percentage figure
-	
+	%\affiliationentry{1}{Department Name, Imperial College London}\\
+	%\affiliationentry{2}{University Name}\\
+	%\affiliationentry{3}{Institute Name}
+	\smalltext{
+	\subsection{References}
 	\begin{enumerate}
-		\item Lorem ipsum
-		\item Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-		\item Praesent porttitor.*
-	\end{enumerate}
+		\item Sylvan, Zachary. {\ImperialSansLight On partially wrapped Fukaya categories.}
+		\item Auroux, Denis; Katzarkov, Ludmil; Orlov, Dmitri. {\ImperialSansLight Mirror \,symmetry\, for\, Del \,Pezzo\, surfaces:\, Vanishing\, cycles\, and\, coherent\, sheaves}
+		\item Auroux, Denis; Katzarkov, Ludmil; Orlov, Dmitri. {\ImperialSansLight Mirror\, symmetry\, for\, weighted\, projective\, planes\, and\, their\, noncommutative\, deformations.}
+		\item GPS
+		\item Rota
+		\item ishii
+		\item Hacking-Keating. {\ImperialSansLight This is light text.}
+	\end{enumerate}}
 	
-	\smalltext{*Equae es nobissitat hitatum estis quodit laborib ustotatet e auexere estint eium ium experib usantis sae maio omnis co.} % Use \smalltext or an enclosed \small for a block of text in a reduced font size
-		
-	\boldsection{Arum alis dolum aut pe dolorestem cone verestis es si beaquib usanime eum} % Output some bold text to stand out from the body text
 	
-	Equae es nobissitat hitatum estis quodit larib ustotatet etur aut exerem ium exeb.
+	\nocite{*}
+	\printbibliography
+	%\subsection{Funders}
 	
-	\subsection{Affiliations}
-	
-	% Affiliation institutions, the first parameter is the affiliation number (matching the author list) and the second is the institution
-	\affiliationentry{1}{Department Name, Imperial College London}\\
-	\affiliationentry{2}{University Name}\\
-	\affiliationentry{3}{Institute Name}
-	
-	\subsection{Funders}
-	
-	\includegraphics[width=0.55\linewidth]{UKRI_logo.png}\hfill\includegraphics[width=0.35\linewidth]{Grey_16-9.pdf} % Side by side funder logos
+	%\includegraphics[width=0.55\linewidth]{UKRI_logo.png}
+	%\hfill \hfill\includegraphics[width=0.55\linewidth]{lsgntlogo.png} % Side by side funder logos
 	
 %----------------------------------------------------------------------------------------
 
 \end{multicols}
-
-%----------------------------------------------------------------------------------------
 
 \end{document}

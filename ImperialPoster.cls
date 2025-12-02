@@ -168,10 +168,12 @@
 	}{% Otherwise use the RGB logo for screens
 		\includegraphics[height=\iftoggle{a1papersize}{1.7615cm}{2.4126cm}]{ICL_Logo_Blue_RGB.pdf}%
 	}%
-	\expandafter\ifstrequal\expandafter{\coauthorlogosinternal}{}{}{\coauthorlogosinternal}% If coauthor logos were specified by the user
+	
 }
 \fancyhead[C]{} % Center header
-\fancyhead[R]{} % Right header
+\fancyhead[R]{\expandafter\ifstrequal\expandafter{\coauthorlogosinternal}{}{}{\coauthorlogosinternal}% If coauthor logos were specified by the user
+
+} % Right header
 
 \fancyfoot[L]{% Left footer
 	\color{ICLBlue}% Color
@@ -252,7 +254,7 @@
 
 \usepackage{caption} % Required for customizing captions
 
-\DeclareCaptionFormat{anyfontsize}{\iftoggle{a1papersize}{\fontsize{10pt}{12.5pt}\selectfont}{\fontsize{14pt}{17.5pt}\selectfont}#1#2#3} % Font size of captions in a new caption style
+\DeclareCaptionFormat{anyfontsize}{\iftoggle{a1papersize}{\fontsize{10pt}{12.5pt}\selectfont}{\fontsize{24pt}{27.5pt}\selectfont}#1#2#3} % Font size of captions in a new caption style
 \captionsetup{format=anyfontsize, labelfont=bf} % Activate the custom caption style and style labels
 \captionsetup{justification=justified, singlelinecheck=false} % Left-align captions
 
@@ -293,7 +295,7 @@
 	\begingroup
 		\color{ICLBlue} % Color
 		\setlength{\arrayrulewidth}{2pt} % Thickness of table rules
-		\begin{tabular}{@{} L{0.655\linewidth} | R{0.32\linewidth} @{}} % Column widths and text alignment
+		\begin{tabular}{@{} L{0.66\linewidth} | R{0.33\linewidth} @{}} % Column widths and text alignment
 			\hline % Top rule
 			\parbox[t]{\linewidth}{\vspace{0pt}\iftoggle{a1papersize}{\fontsize{42pt}{42pt}\selectfont}{\fontsize{62pt}{62pt}\selectfont}\bfseries\postertitle\vspace{20pt}} & \parbox[t]{\linewidth}{\vspace{0pt}\bfseries\posterauthors\vspace{20pt}}\\ % Poster title and authors in the 2 columns of the table, styled with whitespace above and below
 			\hline % Bottom rule
