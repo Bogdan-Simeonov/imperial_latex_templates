@@ -52,7 +52,24 @@
 
 % Contributor/author names, can be split across multiple lines manually with \\
 % Add affiliations using the \affiliation{} command
-\posterauthors{Bogdan Simeonov (Imperial College London,as part of the London School of Geometry and Number Theory)}
+\posterauthors{
+	\begin{minipage}[t]{\linewidth}
+        \begin{minipage}[c]{0.5\linewidth}
+			\vspace{0pt}
+            Bogdan Simeonov\\
+			b.simeonov23@imperial.ac.uk
+        \end{minipage}%
+        \begin{minipage}[c]{0.5\linewidth}
+			\vspace{0pt}
+			\hspace{13.5cm}\includegraphics[width=\linewidth/5]{visualizationsQR.png}
+        \end{minipage}
+    \end{minipage}
+	
+	}
+
+
+
+
 
 % Command to output coauthor logos to the right of the Imperial logo in the header of the poster
 % If no coauthor logos are required, remove or comment out this command
@@ -74,19 +91,19 @@
 	
 	\subsection{\Large Introduction and main result}
 	
-	We study a class of orbifold del Pezzo surfaces with a single $\frac{1}{k}(1,1)$ point, thought of as the family of hypersurfaces $X_{k+1}\subset \mathbb{P}(1,1,1,k)$. Their derived category has a particularly nice semiorthogonal decomposition due to the special McKay correspondence (Ueda-Ishii, Rota-Gugiatti):
-	$$\mathcal{D}^b(\mathcal{X})=\langle e_2, \dots, e_{k-1}, \Phi D^b(Y)\rangle$$ where $Y$ is the resolution of the underlying singular coarse space of $\mathcal{X}$ and the $e_i$ are skyscraper sheaves supported at the orbifold point, with some extra representation-theoretic data.
+	We study a class of orbifold del Pezzo surfaces with a single $\frac{1}{k}(1,1)$ point (with $k$ odd), namely the family of hypersurfaces $X_{k+1}\subset \mathbb{P}(1,1,1,k)$. Their derived category has a particularly nice semiorthogonal decomposition due to the special McKay correspondence:
+	$$\mathcal{D}^b(\mathcal{X})=\langle e_2, \dots, e_{k-1}, \Phi \mathcal{D}^b(Y)\rangle$$ where $Y$ is the resolution of the underlying singular coarse space of $\mathcal{X}$ and the $e_i$ are skyscraper sheaves supported at the orbifold point, with some extra representation-theoretic data.
 
-	\begin{thm}There is a mirror LG model $W:M^0\rightarrow \mathbb{C}$ whose generic fiber is a hyperelliptic curve of genus $\frac{k+1}{2}$ and an explicit mirror map associating to a complexified Kahler class $[B+i\omega]$ an element $\mathcal{X}$ in the family of del Pezzo surfaces such that $$\mathcal{D}^b(\mathcal{X})\simeq \mathrm{Lag}_{vc}(M^0,W; [B+i\omega])$$
-	Moreover, there is a complex submanifold $M^{in}\subset M^0$ which is a Stein subdomain when $M^0$ is exact which is a fibration of punctured elliptic curves for which $$D^b(Y)\simeq \mathrm{Lag}_{vc}(M^{in}, W|_{M^{in}}; [B+i\omega]|_{M^{in}})$$
-	As such, the fully faithful functor $\Phi:\mathcal{D}^b(Y)\rightarrow \mathcal{D}^b(\mathcal{X})$ can be thought of as a non-exact analogue of the forward stopped inclusion functors of Sylvan/Ganatra-Pardon-Shende.
+	\begin{thm}There is a mirror LG model $W:M^0\rightarrow \mathbb{C}$ whose generic fiber is an affine hyperelliptic curve of genus $\frac{k+1}{2}$ and an explicit mirror map associating to a complexified Kahler class $[B+i\omega]$ an $\mathcal{X}$ in the family of del Pezzo surfaces such that $$\mathcal{D}^b(\mathcal{X})\simeq \mathrm{Lag}_{vc}(M^0,W; [B+i\omega])$$
+	Moreover, there is a codimension $0$ complex submanifold $M^{in}\subset M^0$ which, equipped with the restriction of $W$, becomes a fibration of punctured elliptic curves satisfying $$D^b(Y)\simeq \mathrm{Lag}_{vc}(M^{in}, W|_{M^{in}}; [B+i\omega]|_{M^{in}})$$
+	As such, the fully faithful functor $\Phi:\mathcal{D}^b(Y)\rightarrow \mathcal{D}^b(\mathcal{X})$ can be realized on the mirror as a non-exact analogue of the forward stopped inclusion functors of Sylvan/Ganatra-Pardon-Shende.
 	\end{thm}
 
 
 	
 	\subsection{\Large Previous results}
 	
-	Our paper builds and generalizes techniques of Auroux-Katzarkov-Orlov (who proved HMS for smooth del Pezzo surfaces, as well as weighted projective planes), as well as Hacking-Keating, who proved HMS for smooth log CY surfaces at the large volume limit by constructing an abstract Lefschetz fibration. In particular, the manifold $M^{in}$ serves as an explicit realization of Hacking-Keating's abstract Lefschetz fibration, and moreover we are able to consider mirror symmetry over a large open subset of the space of complex structures rather than just the large volume limit point.
+	Our paper builds and generalizes techniques of Auroux-Katzarkov-Orlov (who proved HMS for smooth del Pezzo surface and weighted projective planes), as well as Hacking-Keating, who proved HMS for smooth log CY surfaces at the large volume limit by constructing an abstract Lefschetz fibration. In particular, the manifold $M^{in}$ serves as an explicit realization of Hacking-Keating's abstract Lefschetz fibration, and moreover we are able to consider mirror symmetry over a large open subset of the space of complex structures rather than just the large volume limit point.
 	
 
 		
@@ -106,19 +123,19 @@
 		\centering
 		\includegraphics[scale=3]{criticalvaluesandpaths.pdf} \caption{ Critical values in the case $k=15, q_i=1, \tau_1=1, \tau_i>0, s\approx 0$. At the origin, there is a fiber containing $k$ holomorphic spheres.}
 	\end{figure}
-	A careful choice of vanishing paths (differing from the one depicted above by passing to the left dual of the paths going to the outer purple critical values) will give us a collection of Lagrangian vanishing cycles, whose topological type we compute on the general fiber. We get a semiorthogonal decomposition $$\langle \color{purple}\tilde{L}_{2},\dots, \tilde{L}_{k-1}, \color{blue}P_0, \tilde{P},P_1, \color{orange}B_1, \dots, B_{k+1}\rangle$$ which we claim is mirror to the full exceptional collection $$\langle e_2, \dots, e_{k-1}, \Phi \mathcal{O}, \Phi \mathcal{T}(-H),\Phi \mathcal{O}(H), \Phi\mathcal{O}_{B_1},\dots, \Phi\mathcal{O}_{B_{k+1}}\rangle$$
+	A careful choice of vanishing paths (differing from the one depicted above by passing to the left dual of the paths going to the outer purple critical values) will give us a collection of Lagrangian vanishing cycles and a semiorthogonal decomposition $$\mathrm{Lag}_{vc}(M^0)=\langle \color{purple}\tilde{L}_{2},\dots, \tilde{L}_{k-1}, \color{blue}P_0, \tilde{P},P_1, \color{orange}B_1, \dots, B_{k+1} \color{black}\rangle$$ that we claim is mirror to a full exceptional collection $$\mathcal{D}^b(\mathcal{X})=\langle e_2, \dots, e_{k-1}, \Phi \mathcal{O}, \Phi \mathcal{T}(-H),\Phi \mathcal{O}(H), \Phi\mathcal{O}_{E_1},\dots, \Phi\mathcal{O}_{E_{k+1}}\rangle$$
 	To prove this, we choose grading data so that everything is concentrated in degree $0$ and hence the $A_\infty$ structure reduces to a computation of the composition law in both categories.
 
 
 
-	\subsection{\Large Resolving orbifold points on the B-side as handle attachment surgery on the A-side}
+	\subsection{\Large Resolving orbifold points is mirror to removing handles}
 	
-	To recover the mirror to $Y$ from the mirror to $\mathcal{X}$, one passes to a codimension $0$ complex submanifold $M^{in}\subset M^0$. This can be constructed as $M^{in}:=\{m \in M|\, |W(m)|^2\leq R,|y(m)|^2\leq R\}$ for a sufficiently large $R$. This is essentially restricting the LG model to a smaller disk, ignoring the outer critical values, but also making the generic fiber smaller by removing some handles, which can be visualized as:
+	To recover the mirror to $Y$ from the mirror to $\mathcal{X}$, one passes to a codimension $0$ complex submanifold $M^{in}\subset M^0$. This can be constructed as $M^{in}:=\{m \in M|\, |W(m)|^2\leq R,|y(m)|^2\leq R\}$ for a suitable radius $R$. This restricts the Lefschetz fibration to a smaller disk, and moreover removes some of the 'bridge' handles as in the following figure:
 
 	\begin{figure}[H] 
 		\centering
 		\includegraphics[scale=2]{HyperellipticHandles.pdf} % Figure image
-		\caption{ A punctured genus $\frac{k+1}{2}$ hyperelliptic curve, thought of as a twice-punctured elliptic curve with $k-2$ handle attachments.}
+		\caption{ A punctured genus $\frac{k+1}{2}$ hyperelliptic curve, thought of as a twice-punctured elliptic curve with $k-2$ handle attachments. Here, we depict the mirrors to $e_{k-1}$ and $e_{k-2}$ for $k=5$.}
 	\end{figure}
 
 	
@@ -132,12 +149,13 @@
 	\subsection{References}
 	\begin{enumerate}
 		\item Sylvan, Zachary. {\ImperialSansLight On partially wrapped Fukaya categories.}
-		\item Auroux, Denis; Katzarkov, Ludmil; Orlov, Dmitri. {\ImperialSansLight Mirror \,symmetry\, for\, Del \,Pezzo\, surfaces:\, Vanishing\, cycles\, and\, coherent\, sheaves}
+		\item Auroux, Denis; Katzarkov, Ludmil; Orlov, Dmitri. {\ImperialSansLight Mirror \,symmetry\, for\, Del \,Pezzo\, surfaces}
 		\item Auroux, Denis; Katzarkov, Ludmil; Orlov, Dmitri. {\ImperialSansLight Mirror\, symmetry\, for\, weighted\, projective\, planes\, and\, their\, noncommutative\, deformations.}
-		\item GPS
-		\item Rota
-		\item ishii
-		\item Hacking-Keating. {\ImperialSansLight This is light text.}
+		\item Ganatra, Sheel; Pardon, John; Shende, Vivek; {\ImperialSansLight Sectorial descent for wrapped Fukaya categories}
+		\item Gugiatti, Giulia; Rota, Franco; {\ImperialSansLight Full exceptional collections for anticanonical log Del Pezzo surfaces}
+		\item Hacking, Paul; Keating, Ailsa; {\ImperialSansLight Homological mirror symmetry for log Calabi-Yau surfaces}
+		\item Ishii, Akira; Ueda, Kazushi; {\ImperialSansLight The special McKay correspondence and exceptional collection}
+		\item Lekili, Yanki; Polishchuk, Alexander; {\ImperialSansLight Auslander orders over nodal stacky curves and partially wrapped Fukaya categories}
 	\end{enumerate}}
 	
 	

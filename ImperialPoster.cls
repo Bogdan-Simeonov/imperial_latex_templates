@@ -163,17 +163,26 @@
 \fancyhf{} % Clear default headers/footers
 
 \fancyhead[L]{% Left header
-	\iftoggle{print}{% Use the CMYK logo for print mode
-		\includegraphics[height=\iftoggle{a1papersize}{1.7615cm}{2.4126cm}]{ICL_Logo_Blue_CMYK.pdf}%
-	}{% Otherwise use the RGB logo for screens
-		\includegraphics[height=\iftoggle{a1papersize}{1.7615cm}{2.4126cm}]{ICL_Logo_Blue_RGB.pdf}%
-	}%
-	
+  \iftoggle{print}{% Use the CMYK logo for print mode
+    \raisebox{-0.1cm}{%
+      \includegraphics[height=\iftoggle{a1papersize}{1.7615cm}{2.4126cm}]{ICL_Logo_Blue_CMYK.pdf}%
+    }%
+  }{% Otherwise use the RGB logo for screens
+    \raisebox{0.2cm}{%
+      \includegraphics[height=\iftoggle{a1papersize}{1.7615cm}{2.4126cm}]{ICL_Logo_Blue_RGB.pdf}%
+    }%
+  }%
 }
-\fancyhead[C]{} % Center header
-\fancyhead[R]{\expandafter\ifstrequal\expandafter{\coauthorlogosinternal}{}{}{\coauthorlogosinternal}% If coauthor logos were specified by the user
 
-} % Right header
+\fancyhead[C]{} % Center header
+
+\fancyhead[R]{%
+  \expandafter\ifstrequal\expandafter{\coauthorlogosinternal}{}{%
+    % empty, do nothing
+  }{%
+    \raisebox{-0.2cm}{\coauthorlogosinternal}% LOWER by 0.5 cm
+  }%
+}
 
 \fancyfoot[L]{% Left footer
 	\color{ICLBlue}% Color
@@ -314,6 +323,7 @@
 %----------------------------------------------------------------------------------------
 %	COAUTHOR LOGOS
 %----------------------------------------------------------------------------------------
+
 
 \newcommand{\coauthorlogo}[2][\iftoggle{a1papersize}{1.7615cm}{2.4126cm}]{\hspace{2cm}\includegraphics[height=#1]{#2}} % Command to output a coauthor logo in the header
 
